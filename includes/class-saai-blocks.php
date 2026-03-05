@@ -7,6 +7,7 @@
  */
 
 use SAAI\Admin\SAAI_Admin_Page;
+use SAAI\Admin\SAAI_Admin_SAAI_Blocks;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -41,6 +42,7 @@ class SAAI_Blocks {
 	 * Initialize the plugin.
 	 */
 	private function init() {
+		add_action( 'init', array( $this, 'register_settings' ) );
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_filter( 'block_categories_all', array( $this, 'register_block_category' ), 10, 2 );
 	}
@@ -58,17 +60,86 @@ class SAAI_Blocks {
 				'plugin_path' => SAAI_BLOCKS_PATH,
 			);
 			new SAAI_Admin_Page( $admin_menu );
+			new SAAI_Admin_SAAI_Blocks();
 		}
 	}
 
 	/**
-	 * Registers the SAAI Blocks category.
+	 * Block slugs managed by this plugin.
+	 *
+	 * @var string[]
+	 */
+	private static $block_slugs = array(
+		'breadcrumb-block',
+		'hover-image-switcher',
+		'responsive-device-image',
+		'image-text-hover',
+	);
+
+	/**
+	 * Registers the plugin setting for enabled blocks and exposes it via REST API.
+	 */
+	public function register_settings() {
+		register_setting(
+			'saai-blocks',
+			'saai_blocks_enabled',
+			array(
+				'type'              => 'object',
+				'default'           => array_fill_keys( self::$block_slugs, true ),
+				'show_in_rest'      => array(
+					'schema' => array(
+						'type'       => 'object',
+						'properties' => array(
+							'breadcrumb-block'        => array( 'type' => 'boolean' ),
+							'hover-image-switcher'    => array( 'type' => 'boolean' ),
+							'responsive-device-image' => array( 'type' => 'boolean' ),
+							'image-text-hover'        => array( 'type' => 'boolean' ),
+						),
+					),
+				),
+				'sanitize_callback' => array( $this, 'sanitize_blocks_enabled' ),
+			)
+		);
+	}
+
+	/**
+	 * Sanitize the enabled blocks option.
+	 *
+	 * @param mixed $input Raw input value.
+	 * @return array Sanitized array of block enabled states.
+	 */
+	public function sanitize_blocks_enabled( $input ) {
+		$sanitized = array();
+		foreach ( self::$block_slugs as $slug ) {
+			$sanitized[ $slug ] = ! empty( $input[ $slug ] );
+		}
+		return $sanitized;
+	}
+
+	/**
+	 * Returns the enabled state for each block, merging stored option with defaults.
+	 *
+	 * @return array
+	 */
+	private function get_enabled_blocks() {
+		$defaults = array_fill_keys( self::$block_slugs, true );
+		$stored   = get_option( 'saai_blocks_enabled', $defaults );
+		return wp_parse_args( $stored, $defaults );
+	}
+
+	/**
+	 * Registers the SAAI Blocks category (only when at least one block is enabled).
 	 *
 	 * @param array  $categories Existing block categories.
 	 * @param object $_post      Current post object (unused).
 	 * @return array Modified block categories.
 	 */
 	public function register_block_category( $categories, $_post ) {
+		$enabled = $this->get_enabled_blocks();
+		if ( ! in_array( true, $enabled, true ) ) {
+			return $categories;
+		}
+
 		$saai_category = array(
 			'slug'  => 'saai-blocks',
 			'title' => __( 'SAAI Blocks', 'saai-blocks' ),
@@ -86,18 +157,15 @@ class SAAI_Blocks {
 	}
 
 	/**
-	 * Registers all blocks in the build directory.
+	 * Registers only the enabled blocks from the build directory.
 	 */
 	public function register_blocks() {
-		$blocks = array(
-			'breadcrumb-block',
-			'hover-image-switcher',
-			'responsive-device-image',
-			'image-text-hover',
-		);
+		$enabled = $this->get_enabled_blocks();
 
-		foreach ( $blocks as $block ) {
-			register_block_type( SAAI_BLOCKS_PATH . '/assets/build/' . $block );
+		foreach ( self::$block_slugs as $slug ) {
+			if ( ! empty( $enabled[ $slug ] ) ) {
+				register_block_type( SAAI_BLOCKS_PATH . '/assets/build/' . $slug );
+			}
 		}
 	}
 

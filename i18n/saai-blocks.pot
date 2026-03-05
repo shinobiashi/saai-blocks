@@ -9,13 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-05T12:32:33+00:00\n"
+"POT-Creation-Date: 2026-03-05T13:06:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: saai-blocks.php
-#: includes/class-saai-blocks.php:74
+#: includes/class-saai-blocks.php:143
 msgid "SAAI Blocks"
 msgstr ""
 
@@ -43,22 +43,30 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: includes/class-saai-blocks.php:56
+#: includes/class-saai-blocks.php:57
 msgid "SAAI overview"
 msgstr ""
 
-#: includes/class-saai-blocks.php:57
+#: includes/class-saai-blocks.php:58
 msgid "SAAI"
 msgstr ""
 
 #. translators: %s is the search query string.
-#: includes/class-saai-blocks.php:235
+#: includes/class-saai-blocks.php:301
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: includes/class-saai-blocks.php:242
+#: includes/class-saai-blocks.php:308
 msgid "404 Not Found"
+msgstr ""
+
+#: includes/saai_framework/class-saai-admin-page.php:106
+#: includes/saai_framework/class-saai-admin-page.php:107
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:87
+#: src/saai/admin/blocks-settings/index.js:101
+msgid "Block Settings"
 msgstr ""
 
 #: assets/build/breadcrumb-block.js:1
@@ -147,7 +155,9 @@ msgstr ""
 
 #: assets/build/hover-image-switcher.js:1
 #: assets/build/hover-image-switcher/index.js:1
+#: assets/build/saai/admin/blocks-settings.js:1
 #: src/hover-image-switcher/edit.js:103
+#: src/saai/admin/blocks-settings/index.js:22
 msgid "Image Gallery Swiper"
 msgstr ""
 
@@ -333,7 +343,9 @@ msgstr ""
 
 #: assets/build/image-text-hover.js:1
 #: assets/build/image-text-hover/index.js:1
+#: assets/build/saai/admin/blocks-settings.js:1
 #: src/image-text-hover/edit.js:80
+#: src/saai/admin/blocks-settings/index.js:32
 msgid "Image Text Hover Block"
 msgstr ""
 
@@ -420,6 +432,66 @@ msgstr ""
 #: assets/build/responsive-device-image/index.js:1
 #: src/responsive-device-image/edit.js:188
 msgid "Smartphone Image"
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:17
+msgid "Breadcrumb Block"
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:18
+msgid "Display breadcrumb navigation with customizable separators, colors, and SEO-friendly structured data."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:23
+msgid "Display multiple images in a swipeable gallery."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:27
+msgid "Responsive Device Image Block"
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:28
+msgid "Display different images for PC, tablet, and smartphone."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:33
+msgid "Interactive image block with text overlay on hover."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:115
+msgid "Select the blocks to use on this site. Disabled blocks will not appear in the editor. If all blocks are disabled, the \"SAAI Blocks\" category will also be hidden."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:129
+msgid "Enabled"
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:130
+msgid "Disabled"
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:68
+msgid "Settings saved. Please reload the page to apply changes."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:74
+msgid "Failed to save settings."
+msgstr ""
+
+#: assets/build/saai/admin/blocks-settings.js:1
+#: src/saai/admin/blocks-settings/index.js:152
+msgid "Save Settings"
 msgstr ""
 
 #: assets/build/saai/admin/overview.js:1

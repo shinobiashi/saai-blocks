@@ -7,11 +7,11 @@ const SaaiOverviewPage = () => {
         <div className="saai-admin-layout">
             <div className="saai-admin__header">
                 <div className="saai-admin__header-wrapper">
-                    <h1>{ __( 'SAAI Overview', 'plugin-name' ) }</h1>
+                    <h1>{ __( 'SAAI Overview', 'saai-blocks' ) }</h1>
                 </div>
             </div>
             <div className="saai-admin__content">
-                <p>{ __( 'Welcome to the SAAI admin overview page.', 'plugin-name' ) }</p>
+                <p>{ __( 'Welcome to the SAAI admin overview page.', 'saai-blocks' ) }</p>
             </div>
         </div>
     );
