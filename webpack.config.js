@@ -33,6 +33,7 @@ module.exports = {
 		'breadcrumb-block': './src/breadcrumb-block/index.js',
 		'hover-image-switcher': './src/hover-image-switcher/index.js',
 		'responsive-device-image': './src/responsive-device-image/index.js',
+		'image-text-hover': './src/image-text-hover/index.js',
 	},
 	output: {
 		path: path.resolve( __dirname, 'assets/build' ),

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SAAI Blocks 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/saai-blocks\n"
-"POT-Creation-Date: 2026-03-05T09:45:51+00:00\n"
-"PO-Revision-Date: 2026-03-05 18:50+0900\n"
+"POT-Creation-Date: 2026-03-05T12:32:33+00:00\n"
+"PO-Revision-Date: 2026-03-05 21:32+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -50,12 +50,12 @@ msgid "SAAI"
 msgstr "SAAI"
 
 #. translators: %s is the search query string.
-#: includes/class-saai-blocks.php:233
+#: includes/class-saai-blocks.php:235
 #, php-format
 msgid "Search Results for: %s"
 msgstr "「%s」の検索結果"
 
-#: includes/class-saai-blocks.php:240
+#: includes/class-saai-blocks.php:242
 msgid "404 Not Found"
 msgstr "404 ページが見つかりませんでした"
 
@@ -276,6 +276,128 @@ msgstr "次の画像へ"
 msgid "Go to image"
 msgstr "画像へ移動"
 
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:103
+msgid "Overlay Settings"
+msgstr "オーバーレイ設定"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:105
+msgid "Overlay Color"
+msgstr "オーバーレイカラー"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:113
+msgid "Overlay Opacity"
+msgstr "オーバーレイの不透明度"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:139
+msgid "Add hover text..."
+msgstr "ホバーテキストを追加..."
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/image-text-hover/edit.js:151 src/responsive-device-image/edit.js:125
+msgid "Change Image"
+msgstr "画像変更"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/image-text-hover/edit.js:157 src/responsive-device-image/edit.js:129
+msgid "Remove Image"
+msgstr "画像を削除"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:80
+msgid "Image Text Hover Block"
+msgstr "画像テキストホバーブロック"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:81
+msgid "Upload an image to get started"
+msgstr "画像を読み込んで始めましょう"
+
+#: assets/build/image-text-hover.js:1 assets/build/image-text-hover/index.js:1
+#: src/image-text-hover/edit.js:90
+msgid "Upload Image"
+msgstr "画像をアップロード"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:105
+msgid "Required"
+msgstr "必須"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:106
+msgid "Optional"
+msgstr "任意"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:120
+msgid "Using PC image"
+msgstr "PC 画像を使用する"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:125
+#: src/responsive-device-image/edit.js:141
+msgid "Select Image"
+msgstr "画像を選択"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:137
+msgid "Select an image"
+msgstr "画像を選択する"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:138
+msgid "This image is required"
+msgstr "この画像は必須です"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:138
+msgid "If not selected, the PC image will be used"
+msgstr "選択されない場合、PC 画像が使用されます"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:151
+msgid "Alt Text"
+msgstr "ALT（代替）文"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:154
+msgid "Enter a description for the image"
+msgstr "画像の説明を入力してください"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:165
+msgid "PC Image"
+msgstr "PC 画像"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:176
+msgid "Tablet Image"
+msgstr "タブレット画像"
+
+#: assets/build/responsive-device-image.js:1
+#: assets/build/responsive-device-image/index.js:1
+#: src/responsive-device-image/edit.js:188
+msgid "Smartphone Image"
+msgstr "スマートフォン画像"
+
 #: assets/build/saai/admin/overview.js:1 src/saai/admin/overview/index.js:10
 msgid "SAAI Overview"
 msgstr "SAAI の概要"
@@ -286,8 +408,8 @@ msgstr "SAAI 管理者概要ページへようこそ。"
 
 #: assets/build/breadcrumb-block/block.json src/breadcrumb-block/block.json
 msgctxt "block title"
-msgid "Breadcrumb Block Pro"
-msgstr "バンくずリストブロック"
+msgid "Breadcrumb Block"
+msgstr "パンくずリストブロック"
 
 #: assets/build/breadcrumb-block/block.json src/breadcrumb-block/block.json
 msgctxt "block description"
@@ -309,3 +431,29 @@ msgstr "画像ギャラリースワイパー"
 msgctxt "block description"
 msgid "Display a swipeable image gallery with multiple images."
 msgstr "複数の画像を含むスワイプ可能な画像ギャラリーを表示します。"
+
+#: assets/build/image-text-hover/block.json src/image-text-hover/block.json
+msgctxt "block title"
+msgid "Image Text Hover Block"
+msgstr "画像テキストホバーブロック"
+
+#: assets/build/image-text-hover/block.json src/image-text-hover/block.json
+msgctxt "block description"
+msgid ""
+"An interactive image block that displays overlay text on hover with smooth "
+"transitions."
+msgstr ""
+"ホバー時にオーバーレイテキストを表示し、滑らかな遷移効果を持つインタラクティ"
+"ブな画像ブロック。"
+
+#: assets/build/responsive-device-image/block.json
+#: src/responsive-device-image/block.json
+msgctxt "block title"
+msgid "Responsive Device Image Block"
+msgstr "レスポンシブデバイス画像ブロック"
+
+#: assets/build/responsive-device-image/block.json
+#: src/responsive-device-image/block.json
+msgctxt "block description"
+msgid "Display different images for PC, tablet, and smartphone devices"
+msgstr "PC、タブレット、スマートフォン端末ごとに異なる画像を表示する"

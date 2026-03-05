@@ -102,8 +102,8 @@ export default function Edit( { attributes, setAttributes } ) {
 			<div className="responsive-device-image-upload-area">
 				<div className="upload-label">
 					{ label }
-					{ isRequired && <span className="required-badge">{ __( '必須', 'saai-blocks' ) }</span> }
-					{ ! isRequired && <span className="optional-badge">{ __( '任意', 'saai-blocks' ) }</span> }
+					{ isRequired && <span className="required-badge">{ __( 'Required', 'saai-blocks' ) }</span> }
+					{ ! isRequired && <span className="optional-badge">{ __( 'Optional', 'saai-blocks' ) }</span> }
 				</div>
 				<MediaUploadCheck>
 					<MediaUpload
@@ -117,16 +117,16 @@ export default function Edit( { attributes, setAttributes } ) {
 										<img src={ displayUrl } alt={ altText } />
 										{ isFallback && (
 											<div className="fallback-overlay">
-												<span>{ __( 'PC用画像を使用', 'saai-blocks' ) }</span>
+												<span>{ __( 'Using PC image', 'saai-blocks' ) }</span>
 											</div>
 										) }
 										<div className="image-actions">
 											<Button onClick={ open } variant="secondary">
-												{ imageUrl ? __( '画像を変更', 'saai-blocks' ) : __( '画像を選択', 'saai-blocks' ) }
+												{ imageUrl ? __( 'Change Image', 'saai-blocks' ) : __( 'Select Image', 'saai-blocks' ) }
 											</Button>
 											{ imageUrl && (
 												<Button onClick={ onRemove } variant="secondary" isDestructive>
-													{ __( '画像を削除', 'saai-blocks' ) }
+													{ __( 'Remove Image', 'saai-blocks' ) }
 												</Button>
 											) }
 										</div>
@@ -134,11 +134,11 @@ export default function Edit( { attributes, setAttributes } ) {
 								) : (
 									<Placeholder
 										icon="format-image"
-										label={ __( '画像を選択してください', 'saai-blocks' ) }
-										instructions={ isRequired ? __( 'この画像は必須です', 'saai-blocks' ) : __( '未選択の場合はPC用画像を使用します', 'saai-blocks' ) }
+										label={ __( 'Select an image', 'saai-blocks' ) }
+										instructions={ isRequired ? __( 'This image is required', 'saai-blocks' ) : __( 'If not selected, the PC image will be used', 'saai-blocks' ) }
 									>
 										<Button onClick={ open } variant="primary">
-											{ __( '画像を選択', 'saai-blocks' ) }
+											{ __( 'Select Image', 'saai-blocks' ) }
 										</Button>
 									</Placeholder>
 								) }
@@ -148,10 +148,10 @@ export default function Edit( { attributes, setAttributes } ) {
 				</MediaUploadCheck>
 				{ imageUrl && (
 					<TextControl
-						label={ __( 'Alt属性', 'saai-blocks' ) }
+						label={ __( 'Alt Text', 'saai-blocks' ) }
 						value={ altText }
 						onChange={ onAltChange }
-						placeholder={ __( '画像の説明を入力', 'saai-blocks' ) }
+						placeholder={ __( 'Enter a description for the image', 'saai-blocks' ) }
 					/>
 				) }
 			</div>
@@ -162,7 +162,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		<div { ...useBlockProps() }>
 			<div className="responsive-device-image-editor">
 				<ImageUploadArea
-					label={ __( 'PC用画像', 'saai-blocks' ) }
+					label={ __( 'PC Image', 'saai-blocks' ) }
 					imageUrl={ pcImageUrl }
 					imageId={ pcImageId }
 					onSelect={ onSelectPcImage }
@@ -173,7 +173,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				/>
 
 				<ImageUploadArea
-					label={ __( 'タブレット用画像', 'saai-blocks' ) }
+					label={ __( 'Tablet Image', 'saai-blocks' ) }
 					imageUrl={ tabletImageUrl }
 					imageId={ tabletImageId }
 					onSelect={ onSelectTabletImage }
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				/>
 
 				<ImageUploadArea
-					label={ __( 'スマートフォン用画像', 'saai-blocks' ) }
+					label={ __( 'Smartphone Image', 'saai-blocks' ) }
 					imageUrl={ smartphoneImageUrl }
 					imageId={ smartphoneImageId }
 					onSelect={ onSelectSmartphoneImage }
