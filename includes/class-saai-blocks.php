@@ -69,16 +69,20 @@ class SAAI_Blocks {
 	 * @return array Modified block categories.
 	 */
 	public function register_block_category( $categories, $_post ) {
-		return array_merge(
-			array(
-				array(
-					'slug'  => 'saai-blocks',
-					'title' => __( 'SAAI Blocks', 'saai-blocks' ),
-					'icon'  => null,
-				),
-			),
-			$categories
+		$saai_category = array(
+			'slug'  => 'saai-blocks',
+			'title' => __( 'SAAI Blocks', 'saai-blocks' ),
+			'icon'  => null,
 		);
+
+		$theme_index = array_search( 'theme', array_column( $categories, 'slug' ), true );
+
+		if ( false !== $theme_index ) {
+			array_splice( $categories, $theme_index + 1, 0, array( $saai_category ) );
+			return $categories;
+		}
+
+		return array_merge( $categories, array( $saai_category ) );
 	}
 
 	/**
