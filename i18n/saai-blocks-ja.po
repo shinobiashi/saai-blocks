@@ -1,0 +1,311 @@
+# Copyright (C) 2026 Shohei Tanaka
+# This file is distributed under the GPL3.
+msgid ""
+msgstr ""
+"Project-Id-Version: SAAI Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/saai-blocks\n"
+"POT-Creation-Date: 2026-03-05T09:45:51+00:00\n"
+"PO-Revision-Date: 2026-03-05 18:50+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Plugin Name of the plugin
+#: saai-blocks.php includes/class-saai-blocks.php:74
+msgid "SAAI Blocks"
+msgstr "SAAI Blocks"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: saai-blocks.php
+msgid "https://shinobiashi.ai/"
+msgstr "https://shinobiashi.ai/"
+
+#. Description of the plugin
+#: saai-blocks.php
+msgid "Shinobiashi AI Blocks for WordPress."
+msgstr "WordPress 用 Shinobiashi AI ブロック。"
+
+#. Author of the plugin
+#: saai-blocks.php
+msgid "Shohei Tanaka"
+msgstr "Shohei Tanaka"
+
+#: assets/build/breadcrumb-block/render.php:21
+#: src/breadcrumb-block/render.php:21 assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1 src/breadcrumb-block/edit.js:138
+msgid "Breadcrumb"
+msgstr "パンくずリスト"
+
+#: includes/class-saai-blocks.php:56
+msgid "SAAI overview"
+msgstr "SAAI の概要"
+
+#: includes/class-saai-blocks.php:57
+msgid "SAAI"
+msgstr "SAAI"
+
+#. translators: %s is the search query string.
+#: includes/class-saai-blocks.php:233
+#, php-format
+msgid "Search Results for: %s"
+msgstr "「%s」の検索結果"
+
+#: includes/class-saai-blocks.php:240
+msgid "404 Not Found"
+msgstr "404 ページが見つかりませんでした"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:90
+msgid "Breadcrumb Settings"
+msgstr "パンくずリストの設定"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:92
+msgid "Separator"
+msgstr "区切り"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:95
+msgid "Slash (/)"
+msgstr "スラッシュ（/）"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:96
+msgid "Angle Bracket (>)"
+msgstr "山括弧 (>)"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:97
+msgid "Dot (•)"
+msgstr "ドット（•）"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:98
+msgid "Arrow (→)"
+msgstr "矢印（→）"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:99
+msgid "Double Angle (»)"
+msgstr "ダブルアングル（»）"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:100
+msgid "Pipe (|)"
+msgstr "パイプ（|）"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:105
+msgid "Show Home Link"
+msgstr "ホームリンクを表示"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:111
+msgid "Home Text"
+msgstr "ホームテキスト"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:117
+msgid "Show Current Page"
+msgstr "現在のページを表示"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:123
+msgid "Color Settings"
+msgstr "色設定"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:128
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: assets/build/breadcrumb-block.js:1 assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:133
+msgid "Link Color"
+msgstr "リンクの色"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:103
+msgid "Image Gallery Swiper"
+msgstr "画像ギャラリースワイパー"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:104
+msgid "Upload or select images from your media library."
+msgstr "メディアライブラリから画像をアップロードまたは選択します。"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:118
+msgid "Gallery Size"
+msgstr "ギャラリーサイズ"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:120
+msgid "Width"
+msgstr "幅"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:128
+msgid "Height"
+msgstr "高さ"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:136
+msgid "Navigation Layout"
+msgstr "ナビゲーションレイアウト"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:138
+msgid "Place Arrows Outside"
+msgstr "矢印を外側に配置する"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:141
+msgid "Position navigation arrows above the gallery"
+msgstr "ナビゲーション矢印をギャラリーの上に配置します"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:144
+msgid "Place Dots Outside"
+msgstr "ドットを外側に配置する"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:147
+msgid "Position dot indicators below the gallery"
+msgstr "ギャラリーの下にドットインジケーターを配置する"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:150
+msgid "Indicator Style"
+msgstr "インジケータースタイル"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:152
+msgid "Use Bar Style"
+msgstr "バースタイルを使用する"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:155
+msgid "Switch between dot and bar indicators"
+msgstr "ドットとバーのインジケーターを切り替える"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:160
+msgid "Arrow Vertical Position (%)"
+msgstr "矢印の垂直位置（％）"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:166
+msgid ""
+"Adjust the vertical position of the navigation arrows (0% = top, 50% = "
+"center, 100% = bottom)"
+msgstr ""
+"ナビゲーション矢印の垂直位置を調整します（0% = 上、50% = 中央、100% = 下）"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:169
+msgid "Arrow Horizontal Distance (px)"
+msgstr "矢印の水平距離（ピクセル）"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:175
+msgid "Distance from the left/right edge of the gallery"
+msgstr "ギャラリーの左端/右端からの距離"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:180
+msgid "Images"
+msgstr "画像"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:184
+msgid "Image"
+msgstr "画像"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:190
+msgid "Remove"
+msgstr "削除"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:220
+msgid "Replace Images"
+msgstr "画像を置き換える"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:246
+msgid "Previous image"
+msgstr "前の画像"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:254
+msgid "Next image"
+msgstr "次の画像へ"
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:266
+msgid "Go to image"
+msgstr "画像へ移動"
+
+#: assets/build/saai/admin/overview.js:1 src/saai/admin/overview/index.js:10
+msgid "SAAI Overview"
+msgstr "SAAI の概要"
+
+#: assets/build/saai/admin/overview.js:1 src/saai/admin/overview/index.js:14
+msgid "Welcome to the SAAI admin overview page."
+msgstr "SAAI 管理者概要ページへようこそ。"
+
+#: assets/build/breadcrumb-block/block.json src/breadcrumb-block/block.json
+msgctxt "block title"
+msgid "Breadcrumb Block Pro"
+msgstr "バンくずリストブロック"
+
+#: assets/build/breadcrumb-block/block.json src/breadcrumb-block/block.json
+msgctxt "block description"
+msgid ""
+"Display breadcrumb navigation with customizable separators, colors, and SEO-"
+"friendly structured data."
+msgstr ""
+"カスタマイズ可能なセパレーター、色、SEO に適した構造化データを使用して、パン"
+"くずナビゲーションを表示します。"
+
+#: assets/build/hover-image-switcher/block.json
+#: src/hover-image-switcher/block.json
+msgctxt "block title"
+msgid "Image Gallery Swiper"
+msgstr "画像ギャラリースワイパー"
+
+#: assets/build/hover-image-switcher/block.json
+#: src/hover-image-switcher/block.json
+msgctxt "block description"
+msgid "Display a swipeable image gallery with multiple images."
+msgstr "複数の画像を含むスワイプ可能な画像ギャラリーを表示します。"

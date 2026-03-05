@@ -1,0 +1,324 @@
+# Copyright (C) 2026 Shohei Tanaka
+# This file is distributed under the GPL3.
+msgid ""
+msgstr ""
+"Project-Id-Version: SAAI Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/saai-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-05T09:45:51+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: saai-blocks.php
+#: includes/class-saai-blocks.php:74
+msgid "SAAI Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: saai-blocks.php
+msgid "https://shinobiashi.ai/"
+msgstr ""
+
+#. Description of the plugin
+#: saai-blocks.php
+msgid "Shinobiashi AI Blocks for WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: saai-blocks.php
+msgid "Shohei Tanaka"
+msgstr ""
+
+#: assets/build/breadcrumb-block/render.php:21
+#: src/breadcrumb-block/render.php:21
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:138
+msgid "Breadcrumb"
+msgstr ""
+
+#: includes/class-saai-blocks.php:56
+msgid "SAAI overview"
+msgstr ""
+
+#: includes/class-saai-blocks.php:57
+msgid "SAAI"
+msgstr ""
+
+#. translators: %s is the search query string.
+#: includes/class-saai-blocks.php:233
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: includes/class-saai-blocks.php:240
+msgid "404 Not Found"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:90
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:92
+msgid "Separator"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:95
+msgid "Slash (/)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:96
+msgid "Angle Bracket (>)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:97
+msgid "Dot (•)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:98
+msgid "Arrow (→)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:99
+msgid "Double Angle (»)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:100
+msgid "Pipe (|)"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:105
+msgid "Show Home Link"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:111
+msgid "Home Text"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:117
+msgid "Show Current Page"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:123
+msgid "Color Settings"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:128
+msgid "Text Color"
+msgstr ""
+
+#: assets/build/breadcrumb-block.js:1
+#: assets/build/breadcrumb-block/index.js:1
+#: src/breadcrumb-block/edit.js:133
+msgid "Link Color"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:103
+msgid "Image Gallery Swiper"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:104
+msgid "Upload or select images from your media library."
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:118
+msgid "Gallery Size"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:120
+msgid "Width"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:128
+msgid "Height"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:136
+msgid "Navigation Layout"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:138
+msgid "Place Arrows Outside"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:141
+msgid "Position navigation arrows above the gallery"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:144
+msgid "Place Dots Outside"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:147
+msgid "Position dot indicators below the gallery"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:150
+msgid "Indicator Style"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:152
+msgid "Use Bar Style"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:155
+msgid "Switch between dot and bar indicators"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:160
+msgid "Arrow Vertical Position (%)"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:166
+msgid "Adjust the vertical position of the navigation arrows (0% = top, 50% = center, 100% = bottom)"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:169
+msgid "Arrow Horizontal Distance (px)"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:175
+msgid "Distance from the left/right edge of the gallery"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:180
+msgid "Images"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:184
+msgid "Image"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:190
+msgid "Remove"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:220
+msgid "Replace Images"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:246
+msgid "Previous image"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:254
+msgid "Next image"
+msgstr ""
+
+#: assets/build/hover-image-switcher.js:1
+#: assets/build/hover-image-switcher/index.js:1
+#: src/hover-image-switcher/edit.js:266
+msgid "Go to image"
+msgstr ""
+
+#: assets/build/saai/admin/overview.js:1
+#: src/saai/admin/overview/index.js:10
+msgid "SAAI Overview"
+msgstr ""
+
+#: assets/build/saai/admin/overview.js:1
+#: src/saai/admin/overview/index.js:14
+msgid "Welcome to the SAAI admin overview page."
+msgstr ""
+
+#: assets/build/breadcrumb-block/block.json
+#: src/breadcrumb-block/block.json
+msgctxt "block title"
+msgid "Breadcrumb Block Pro"
+msgstr ""
+
+#: assets/build/breadcrumb-block/block.json
+#: src/breadcrumb-block/block.json
+msgctxt "block description"
+msgid "Display breadcrumb navigation with customizable separators, colors, and SEO-friendly structured data."
+msgstr ""
+
+#: assets/build/hover-image-switcher/block.json
+#: src/hover-image-switcher/block.json
+msgctxt "block title"
+msgid "Image Gallery Swiper"
+msgstr ""
+
+#: assets/build/hover-image-switcher/block.json
+#: src/hover-image-switcher/block.json
+msgctxt "block description"
+msgid "Display a swipeable image gallery with multiple images."
+msgstr ""
