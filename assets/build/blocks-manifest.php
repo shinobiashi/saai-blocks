@@ -140,6 +140,65 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'image-text-hover' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'saai-blocks/image-text-hover',
+		'version' => '0.1.0',
+		'title' => 'Image Text Hover Block',
+		'category' => 'saai-blocks',
+		'icon' => 'format-image',
+		'description' => 'An interactive image block that displays overlay text on hover with smooth transitions.',
+		'example' => array(
+			'attributes' => array(
+				'imageUrl' => 'https://placehold.co/600x400/3498db/ffffff?text=Hover+Me',
+				'imageAlt' => 'Example image',
+				'hoverText' => '<p>This text appears on hover with a smooth fade effect</p>'
+			)
+		),
+		'attributes' => array(
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imageAlt' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'hoverText' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'overlayColor' => array(
+				'type' => 'string',
+				'default' => '#000000'
+			),
+			'overlayOpacity' => array(
+				'type' => 'number',
+				'default' => 0.85
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'spacing' => array(
+				'margin' => true,
+				'padding' => true
+			)
+		),
+		'textdomain' => 'saai-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'responsive-device-image' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
