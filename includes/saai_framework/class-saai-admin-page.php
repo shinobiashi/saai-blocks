@@ -89,7 +89,7 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 				'manage_options',
 				$this->menu_slug,
 				array( $this, 'saai_admin_overview_page_callback' ),
-				PLUGIN_NAME_URL . 'assets/images/saai_icon.svg',
+				SAAI_BLOCKS_URL . 'assets/images/saai_icon.svg',
 				56
 			);
 		}
@@ -109,15 +109,15 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 		 * @since 1.0.0
 		 */
 		public function saai_admin_register_scripts() {
-			$script_path       = PLUGIN_NAME_PATH . '/assets/build/saai/admin/overview.js';
-			$script_asset_path = PLUGIN_NAME_PATH . '/assets/build/saai/admin/overview.asset.php';
+			$script_path       = SAAI_BLOCKS_PATH . '/assets/build/saai/admin/overview.js';
+			$script_asset_path = SAAI_BLOCKS_PATH . '/assets/build/saai/admin/overview.asset.php';
 			$script_asset      = file_exists( $script_asset_path )
 			? require $script_asset_path
 			: array(
 				'dependencies' => array(),
 				'version'      => filemtime( $script_path ),
 			);
-			$script_url        = PLUGIN_NAME_URL . 'assets/build/saai/admin/overview.js';
+			$script_url        = SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.js';
 
 			wp_register_script(
 				$this->menu_slug,
@@ -129,10 +129,10 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 
 			wp_register_style(
 				$this->menu_slug,
-				PLUGIN_NAME_URL . '/assets/build/saai/admin/overview.css',
+				SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.css',
 				// Add any dependencies styles may have, such as wp-components.
 				array(),
-				filemtime( PLUGIN_NAME_PATH . '/assets/build/saai/admin/overview.css' )
+				filemtime( SAAI_BLOCKS_PATH . 'assets/build/saai/admin/overview.css' )
 			);
 
 			wp_enqueue_script( $this->menu_slug );
