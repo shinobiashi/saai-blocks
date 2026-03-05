@@ -6,7 +6,7 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
-$trail = telex_breadcrumb_get_trail( $attributes );
+$trail = SAAI_Blocks::get_breadcrumb_trail( $attributes );
 
 if ( empty( $trail ) ) {
 	return '';
@@ -27,7 +27,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	)
 );
 
-$structured_data = telex_breadcrumb_get_structured_data( $trail );
+$structured_data = SAAI_Blocks::get_breadcrumb_structured_data( $trail );
 ?>
 
 <nav <?php echo wp_kses_post( $wrapper_attributes ); ?>>

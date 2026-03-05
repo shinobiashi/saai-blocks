@@ -49,14 +49,14 @@ try {
 	}
 }
 
-	add_action( 'plugins_loaded', 'plugin_name_init', 10 );
+	add_action( 'plugins_loaded', 'saai_blocks_init', 10 );
 
 	/**
 	 * Initialize the plugin.
 	 *
 	 * Loads the text domain and initializes the main plugin class.
 	 */
-function plugin_name_init() {
-	load_plugin_textdomain( 'plugin-name', false, plugin_basename( __DIR__ ) . '/i18n' );
-	Plugin_Name::instance();
+function saai_blocks_init() {
+	load_plugin_textdomain( 'saai-blocks', false, plugin_basename( __DIR__ ) . '/i18n' );
+	SAAI_Blocks::instance();
 }
