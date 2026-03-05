@@ -132,6 +132,12 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 				true
 			);
 
+			wp_set_script_translations(
+				$this->menu_slug,
+				'saai-blocks',
+				SAAI_BLOCKS_PATH . '/i18n'
+			);
+
 			wp_register_style(
 				$this->menu_slug,
 				SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.css',
