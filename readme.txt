@@ -1,5 +1,5 @@
 === SAAI Blocks ===
-Contributors: shinobiashi.ai, shohei.tanaka
+Contributors: shohei.tanaka, shinobiashi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@artws.info&item_name=Donation+for+Artisan&currency_code=JPY
 Tags: blocks, gutenberg, breadcrumb, gallery, swiper
 Requires at least: 6.8
