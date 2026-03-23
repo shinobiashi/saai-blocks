@@ -27,17 +27,14 @@ if ( ! defined( 'SAAI_BLOCKS_PATH' ) ) {
 }
 
 require_once __DIR__ . '/includes/class-saai-blocks.php';
-require_once __DIR__ . '/includes/admin/class-saai-admin-plugin-name.php';
+require_once __DIR__ . '/includes/admin/class-saai-admin-saai-blocks.php';
 require_once __DIR__ . '/includes/saai_framework/class-saai-admin-page.php';
 
 add_action( 'plugins_loaded', 'saai_blocks_init', 10 );
 
 /**
  * Initialize the plugin.
- *
- * Loads the text domain and initializes the main plugin class.
  */
 function saai_blocks_init() {
-	load_plugin_textdomain( 'saai-blocks', false, plugin_basename( __DIR__ ) . '/i18n' );
 	SAAI_Blocks::instance();
 }

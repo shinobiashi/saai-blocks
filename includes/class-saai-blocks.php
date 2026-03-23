@@ -7,6 +7,7 @@
  */
 
 use SAAI\Admin\SAAI_Admin_Page;
+use SAAI\Admin\SAAI_Admin_SAAI_Blocks;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -41,8 +42,14 @@ class SAAI_Blocks {
 	 * Initialize the plugin.
 	 */
 	private function init() {
+		add_action( 'init', array( $this, 'register_settings' ) );
 		add_action( 'init', array( $this, 'register_blocks' ) );
 		add_filter( 'block_categories_all', array( $this, 'register_block_category' ), 10, 2 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_model_viewer_scripts' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_model_viewer_editor_scripts' ) );
+		add_filter( 'script_loader_tag', array( $this, 'add_module_type_to_model_viewer' ), 10, 2 );
+		add_filter( 'upload_mimes', array( $this, 'allow_3d_model_mime_types' ) );
+		add_filter( 'wp_check_filetype_and_ext', array( $this, 'check_3d_model_filetype' ), 10, 4 );
 	}
 
 	/**
@@ -58,17 +65,88 @@ class SAAI_Blocks {
 				'plugin_path' => SAAI_BLOCKS_PATH,
 			);
 			new SAAI_Admin_Page( $admin_menu );
+			new SAAI_Admin_SAAI_Blocks();
 		}
 	}
 
 	/**
-	 * Registers the SAAI Blocks category.
+	 * Block slugs managed by this plugin.
+	 *
+	 * @var string[]
+	 */
+	private static $block_slugs = array(
+		'breadcrumb-block',
+		'hover-image-switcher',
+		'responsive-device-image',
+		'image-text-hover',
+		'model-3d-viewer',
+	);
+
+	/**
+	 * Registers the plugin setting for enabled blocks and exposes it via REST API.
+	 */
+	public function register_settings() {
+		register_setting(
+			'saai-blocks',
+			'saai_blocks_enabled',
+			array(
+				'type'              => 'object',
+				'default'           => array_fill_keys( self::$block_slugs, true ),
+				'show_in_rest'      => array(
+					'schema' => array(
+						'type'       => 'object',
+						'properties' => array(
+							'breadcrumb-block'        => array( 'type' => 'boolean' ),
+							'hover-image-switcher'    => array( 'type' => 'boolean' ),
+							'responsive-device-image' => array( 'type' => 'boolean' ),
+							'image-text-hover'        => array( 'type' => 'boolean' ),
+							'model-3d-viewer'         => array( 'type' => 'boolean' ),
+						),
+					),
+				),
+				'sanitize_callback' => array( $this, 'sanitize_blocks_enabled' ),
+			)
+		);
+	}
+
+	/**
+	 * Sanitize the enabled blocks option.
+	 *
+	 * @param mixed $input Raw input value.
+	 * @return array Sanitized array of block enabled states.
+	 */
+	public function sanitize_blocks_enabled( $input ) {
+		$sanitized = array();
+		foreach ( self::$block_slugs as $slug ) {
+			$sanitized[ $slug ] = ! empty( $input[ $slug ] );
+		}
+		return $sanitized;
+	}
+
+	/**
+	 * Returns the enabled state for each block, merging stored option with defaults.
+	 *
+	 * @return array
+	 */
+	private function get_enabled_blocks() {
+		$defaults = array_fill_keys( self::$block_slugs, true );
+		$stored   = get_option( 'saai_blocks_enabled', $defaults );
+		return wp_parse_args( $stored, $defaults );
+	}
+
+	/**
+	 * Registers the SAAI Blocks category (only when at least one block is enabled).
 	 *
 	 * @param array  $categories Existing block categories.
 	 * @param object $_post      Current post object (unused).
 	 * @return array Modified block categories.
 	 */
 	public function register_block_category( $categories, $_post ) {
+		$enabled = $this->get_enabled_blocks();
+		if ( ! in_array( true, $enabled, true ) ) {
+			return $categories;
+		}
+
 		$saai_category = array(
 			'slug'  => 'saai-blocks',
 			'title' => __( 'SAAI Blocks', 'saai-blocks' ),
@@ -86,17 +164,120 @@ class SAAI_Blocks {
 	}
 
 	/**
-	 * Registers all blocks in the build directory.
+	 * Registers only the enabled blocks from the build directory.
 	 */
 	public function register_blocks() {
-		$blocks = array(
-			'breadcrumb-block',
-			'hover-image-switcher',
-		);
+		$enabled = $this->get_enabled_blocks();
 
-		foreach ( $blocks as $block ) {
-			register_block_type( SAAI_BLOCKS_PATH . '/assets/build/' . $block );
+		foreach ( self::$block_slugs as $slug ) {
+			if ( ! empty( $enabled[ $slug ] ) ) {
+				register_block_type( SAAI_BLOCKS_PATH . '/assets/build/' . $slug );
+			}
 		}
+	}
+
+	// =========================================================================
+	// 3D Model Viewer Block — Script & MIME type helpers
+	// =========================================================================
+
+	/**
+	 * Enqueue the model-viewer CDN script on the frontend (only when block is used).
+	 */
+	public function enqueue_model_viewer_scripts() {
+		$enabled = $this->get_enabled_blocks();
+		if ( empty( $enabled['model-3d-viewer'] ) ) {
+			return;
+		}
+
+		if ( ! has_block( 'saai-blocks/model-3d-viewer' ) ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'saai-model-viewer',
+			'https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js',
+			array(),
+			'3.5.0',
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
+
+	/**
+	 * Enqueue the model-viewer CDN script in the block editor.
+	 */
+	public function enqueue_model_viewer_editor_scripts() {
+		$enabled = $this->get_enabled_blocks();
+		if ( empty( $enabled['model-3d-viewer'] ) ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'saai-model-viewer-editor',
+			'https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js',
+			array(),
+			'3.5.0',
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+	}
+
+	/**
+	 * Add type="module" attribute to the model-viewer CDN script tags.
+	 * model-viewer is an ES module and requires this attribute to load correctly.
+	 *
+	 * @param string $tag    The script HTML tag.
+	 * @param string $handle The script handle.
+	 * @return string Modified script tag.
+	 */
+	public function add_module_type_to_model_viewer( $tag, $handle ) {
+		if ( ! in_array( $handle, array( 'saai-model-viewer', 'saai-model-viewer-editor' ), true ) ) {
+			return $tag;
+		}
+		return str_replace(
+			' src=',
+			' type="module" integrity="sha384-Ftcjj/GNLxPvzNDftO/oryXB9aGxsGZY9JGqsXG0uUKgQDl9RfDgsx9NJ/4IVNPe" crossorigin="anonymous" src=',
+			$tag
+		);
+	}
+
+	/**
+	 * Allow GLB and USDZ file uploads via the media library.
+	 *
+	 * @param array $mimes Allowed MIME types.
+	 * @return array Modified MIME types.
+	 */
+	public function allow_3d_model_mime_types( $mimes ) {
+		$mimes['glb']  = 'model/gltf-binary';
+		$mimes['usdz'] = 'model/vnd.usdz+zip';
+		return $mimes;
+	}
+
+	/**
+	 * Fix file type detection for GLB and USDZ files.
+	 *
+	 * @param array  $data      File data array with ext and type.
+	 * @param string $_file     Full path to the file (unused).
+	 * @param string $filename  File name.
+	 * @param array  $_mimes    Allowed MIME types (unused).
+	 * @return array Modified file data.
+	 */
+	public function check_3d_model_filetype( $data, $_file, $filename, $_mimes ) {
+		$ext = strtolower( pathinfo( $filename, PATHINFO_EXTENSION ) );
+
+		if ( 'glb' === $ext ) {
+			$data['ext']  = 'glb';
+			$data['type'] = 'model/gltf-binary';
+		} elseif ( 'usdz' === $ext ) {
+			$data['ext']  = 'usdz';
+			$data['type'] = 'model/vnd.usdz+zip';
+		}
+
+		return $data;
 	}
 
 	// =========================================================================

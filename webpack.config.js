@@ -30,8 +30,12 @@ module.exports = {
 	entry: {
 		...typeof defaultConfig.entry === 'function' ? defaultConfig.entry() : defaultConfig.entry,
 		'saai/admin/overview': './src/saai/admin/overview/index.js',
+		'saai/admin/blocks-settings': './src/saai/admin/blocks-settings/index.js',
 		'breadcrumb-block': './src/breadcrumb-block/index.js',
 		'hover-image-switcher': './src/hover-image-switcher/index.js',
+		'responsive-device-image': './src/responsive-device-image/index.js',
+		'image-text-hover': './src/image-text-hover/index.js',
+		'model-3d-viewer': './src/model-3d-viewer/index.js',
 	},
 	output: {
 		path: path.resolve( __dirname, 'assets/build' ),

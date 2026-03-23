@@ -106,17 +106,22 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 		/**
 		 * Register and enqueue admin scripts and styles for SAAI admin pages.
 		 *
+		 * @param string $hook_suffix The hook suffix of the current admin page.
 		 * @since 1.0.0
 		 */
-		public function saai_admin_register_scripts() {
+		public function saai_admin_register_scripts( $hook_suffix ) {
+			if ( 'toplevel_page_' . $this->menu_slug !== $hook_suffix ) {
+				return;
+			}
+
 			$script_path       = SAAI_BLOCKS_PATH . '/assets/build/saai/admin/overview.js';
 			$script_asset_path = SAAI_BLOCKS_PATH . '/assets/build/saai/admin/overview.asset.php';
 			$script_asset      = file_exists( $script_asset_path )
-			? require $script_asset_path
-			: array(
-				'dependencies' => array(),
-				'version'      => filemtime( $script_path ),
-			);
+				? require $script_asset_path
+				: array(
+					'dependencies' => array(),
+					'version'      => filemtime( $script_path ),
+				);
 			$script_url        = SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.js';
 
 			wp_register_script(
@@ -127,12 +132,26 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 				true
 			);
 
+			wp_set_script_translations(
+				$this->menu_slug,
+				'saai-blocks',
+				SAAI_BLOCKS_PATH . '/i18n'
+			);
+
+			$overview_css_path = SAAI_BLOCKS_PATH . 'assets/build/saai/admin/overview.css';
 			wp_register_style(
 				$this->menu_slug,
 				SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.css',
-				// Add any dependencies styles may have, such as wp-components.
 				array(),
-				filemtime( SAAI_BLOCKS_PATH . 'assets/build/saai/admin/overview.css' )
+				file_exists( $overview_css_path ) ? filemtime( $overview_css_path ) : SAAI_BLOCKS_VERSION
+			);
+
+			wp_localize_script(
+				$this->menu_slug,
+				'saaiBlocksData',
+				array(
+					'wooPartnerLogoUrl' => SAAI_BLOCKS_URL . 'assets/images/woo_partner_logo.png',
+				)
 			);
 
 			wp_enqueue_script( $this->menu_slug );
