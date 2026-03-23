@@ -44,3 +44,4 @@ logs/
 # Ignore files with secrets
 .claude
 .npmrc
+.distignore
