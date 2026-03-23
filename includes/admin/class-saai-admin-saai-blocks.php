@@ -100,7 +100,7 @@ class SAAI_Admin_SAAI_Blocks {
 			? require $bs_script_asset_path
 			: array(
 				'dependencies' => array(),
-				'version'      => filemtime( $bs_script_path ),
+				'version'      => SAAI_BLOCKS_VERSION,
 			);
 
 		// Enqueue overview CSS for shared admin layout styles.

@@ -138,11 +138,12 @@ if ( ! class_exists( 'SAAI\Admin\SAAI_Admin_Page' ) ) :
 				SAAI_BLOCKS_PATH . '/i18n'
 			);
 
+			$overview_css_path = SAAI_BLOCKS_PATH . 'assets/build/saai/admin/overview.css';
 			wp_register_style(
 				$this->menu_slug,
 				SAAI_BLOCKS_URL . 'assets/build/saai/admin/overview.css',
 				array(),
-				filemtime( SAAI_BLOCKS_PATH . 'assets/build/saai/admin/overview.css' )
+				file_exists( $overview_css_path ) ? filemtime( $overview_css_path ) : SAAI_BLOCKS_VERSION
 			);
 
 			wp_localize_script(

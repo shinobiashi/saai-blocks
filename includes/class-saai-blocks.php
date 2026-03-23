@@ -238,7 +238,11 @@ class SAAI_Blocks {
 		if ( ! in_array( $handle, array( 'saai-model-viewer', 'saai-model-viewer-editor' ), true ) ) {
 			return $tag;
 		}
-		return str_replace( ' src=', ' type="module" src=', $tag );
+		return str_replace(
+			' src=',
+			' type="module" integrity="sha384-Ftcjj/GNLxPvzNDftO/oryXB9aGxsGZY9JGqsXG0uUKgQDl9RfDgsx9NJ/4IVNPe" crossorigin="anonymous" src=',
+			$tag
+		);
 	}
 
 	/**
