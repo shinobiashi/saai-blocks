@@ -9,7 +9,6 @@
 	"description": "An interactive image block that displays overlay text on hover with smooth transitions.",
 	"example": {
 		"attributes": {
-			"imageUrl": "https://placehold.co/600x400/3498db/ffffff?text=Hover+Me",
 			"imageAlt": "Example image",
 			"hoverText": "<p>This text appears on hover with a smooth fade effect</p>"
 		}

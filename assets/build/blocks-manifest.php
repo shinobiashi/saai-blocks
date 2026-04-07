@@ -1,76 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
 // This file is generated. Do not modify it manually.
 return array(
-	'3d-model-viewer' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'saai-blocks/3d-model-viewer',
-		'version' => '1.0.0',
-		'title' => '3D Model Viewer Block',
-		'category' => 'saai-blocks',
-		'icon' => 'format-image',
-		'description' => 'Display interactive 3D models using Google\'s model-viewer. Upload GLB and USDZ files with camera controls, auto-rotate, and AR support.',
-		'example' => array(
-			'attributes' => array(
-				'glbUrl' => '',
-				'usdzUrl' => '',
-				'viewerHeight' => '400px',
-				'backgroundColor' => '#ffffff',
-				'autoRotate' => true
-			)
-		),
-		'attributes' => array(
-			'glbUrl' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'glbId' => array(
-				'type' => 'number',
-				'default' => 0
-			),
-			'glbFilename' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'usdzUrl' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'usdzId' => array(
-				'type' => 'number',
-				'default' => 0
-			),
-			'usdzFilename' => array(
-				'type' => 'string',
-				'default' => ''
-			),
-			'viewerHeight' => array(
-				'type' => 'string',
-				'default' => '400px'
-			),
-			'backgroundColor' => array(
-				'type' => 'string',
-				'default' => '#ffffff'
-			),
-			'autoRotate' => array(
-				'type' => 'boolean',
-				'default' => true
-			)
-		),
-		'supports' => array(
-			'html' => false,
-			'align' => array(
-				'wide',
-				'full'
-			)
-		),
-		'textdomain' => 'saai-blocks',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'render' => 'file:./render.php',
-		'viewScript' => 'file:./view.js'
-	),
 	'breadcrumb-block' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -144,16 +75,7 @@ return array(
 		'example' => array(
 			'attributes' => array(
 				'images' => array(
-					array(
-						'id' => 1,
-						'url' => 'https://via.placeholder.com/600x800',
-						'alt' => 'Image 1'
-					),
-					array(
-						'id' => 2,
-						'url' => 'https://via.placeholder.com/600x800/0000FF',
-						'alt' => 'Image 2'
-					)
+					
 				)
 			)
 		),
@@ -221,7 +143,6 @@ return array(
 		'description' => 'An interactive image block that displays overlay text on hover with smooth transitions.',
 		'example' => array(
 			'attributes' => array(
-				'imageUrl' => 'https://placehold.co/600x400/3498db/ffffff?text=Hover+Me',
 				'imageAlt' => 'Example image',
 				'hoverText' => '<p>This text appears on hover with a smooth fade effect</p>'
 			)

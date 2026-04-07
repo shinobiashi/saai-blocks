@@ -14,6 +14,33 @@ A WordPress block editor extension plugin providing highly customizable, unique 
 
 **SAAI Blocks** is a WordPress block editor extension plugin. It provides highly customizable, unique custom blocks to enhance your website building experience.
 
+= Source Code =
+
+The full source code, including all uncompiled JavaScript, SCSS, and build configuration, is publicly available on GitHub:
+https://github.com/shinobiashi/saai-blocks
+
+To rebuild the plugin assets from source:
+
+1. Clone the repository
+2. Run `npm install` (this also runs `composer install` automatically)
+3. Run `npm run build` to produce the compiled assets in `assets/build/`
+
+Build tools required: Node.js 18+, npm, webpack (via @wordpress/scripts)
+
+= External Services =
+
+The **3D Model Viewer** block uses Google's open-source `model-viewer` web component (https://modelviewer.dev/).
+
+When a visitor views a page containing a 3D model that uses Draco or KTX2 compression, the model-viewer component may load WebAssembly decoder files from Google's static content CDN (gstatic.com). These decoders are only fetched on demand and are not loaded on every page view. No personal data is transmitted.
+
+* Draco geometry decoder: `https://www.gstatic.com/draco/versioned/decoders/`
+* KTX2 texture transcoder: `https://www.gstatic.com/basis-universal/versioned/`
+* Lottie animation loader (if Lottie textures are used): `https://cdn.jsdelivr.net/npm/three/`
+* Google's privacy policy: https://policies.google.com/privacy
+* jsDelivr's privacy policy: https://www.jsdelivr.com/privacy-policy-jsdelivr-net
+
+If your 3D models do not use Draco compression, KTX2 textures, or Lottie animations (plain GLB files), no external requests are made.
+
 = Key Features =
 
 Currently, the plugin includes the following custom blocks:
