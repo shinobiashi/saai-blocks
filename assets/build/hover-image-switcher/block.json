@@ -9,18 +9,7 @@
   "description": "Display a swipeable image gallery with multiple images.",
   "example": {
     "attributes": {
-      "images": [
-        {
-          "id": 1,
-          "url": "https://via.placeholder.com/600x800",
-          "alt": "Image 1"
-        },
-        {
-          "id": 2,
-          "url": "https://via.placeholder.com/600x800/0000FF",
-          "alt": "Image 2"
-        }
-      ]
+      "images": []
     }
   },
   "attributes": {
