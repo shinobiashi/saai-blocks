@@ -21,6 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
+if ( ! defined( 'SAAI_BLOCKS_VERSION' ) ) {
+	define( 'SAAI_BLOCKS_VERSION', '1.0.0' );
+}
+
 if ( ! defined( 'SAAI_BLOCKS_PATH' ) ) {
 	define( 'SAAI_BLOCKS_PATH', __DIR__ );
 	define( 'SAAI_BLOCKS_URL', plugins_url( '/', __FILE__ ) );
