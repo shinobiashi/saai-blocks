@@ -53,3 +53,6 @@ logs/
 .distignore
 wporg-plugin-check.skill
 scripts/
+
+# Generated zip (created by release workflow, not part of plugin)
+*.zip
